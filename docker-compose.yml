@@ -1,0 +1,29 @@
+version: '3'
+
+services: 
+
+    web:
+        container_name: php_web
+        image: webdevops/php-apache
+        volumes: 
+            - .\webserver_data\:/var/www/html
+        ports:
+            - "80:80"
+            - "443:443"
+        links: 
+            - sql:database
+        depends_on:
+            - sql
+    sql:
+        container_name: MYSQL
+        image: "mysql:latest"
+        command:
+            --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+             MYSQL_ROOT_PASSWORD: example
+             MYSQL_DATABASE: db.project
+        volumes:
+            - .\webserver_data\:/var/lib/mysql
+        ports:
+            - "3306:3306"
