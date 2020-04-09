@@ -5,10 +5,10 @@ services:
     web:
         container_name: php_web
         image: webdevops/php-apache
-        volumes: 
-            - .\webserver_data\:/var/www/html
+        volumes:
+        - .\webserver_data\:/var/www/html
         ports:
-            - "80:80"
+            - "8000:80"
             - "443:443"
         links: 
             - sql:database
