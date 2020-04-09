@@ -3,18 +3,22 @@ version: '3'
 services: 
 
     web:
+        hostname: web
         container_name: php_web
         image: webdevops/php-apache
         volumes:
         - .\webserver_data\:/var/www/html
         ports:
-            - "8000:80"
+            - "80:80"
             - "443:443"
         links: 
-            - sql:database
+            - sql
         depends_on:
             - sql
+        environment: 
+             WEB_DOCUMENT_ROOT: /var/www/html
     sql:
+        hostname: sql
         container_name: MYSQL
         image: "mysql:latest"
         command:
