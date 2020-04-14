@@ -68,18 +68,24 @@ $array = (json_decode($response, true));
 #print_r($array);
 #echo '</pre>';
 #var_dump $array;
-var_dump(json_decode($response, true));
+#var_dump(json_decode($response, true));
 echo "<br>";
 echo "<br>";
 echo "<br>";
 
 #https://www.php.net/manual/de/function.array-keys.php
-print_r(array_keys($array, "EUR"));
+#print_r(array_keys($array, "EUR"));
+
+foreach($array as $child) 
+{
+  echo $child . "\n";
+}
 
 
 
 
 
+,
 
 /*
 echo str_replace(array('&lt;?php&nbsp;','?&gt;'), '', highlight_string( '<?php ' .     var_export($array, true) . ' ?>', true ) );
