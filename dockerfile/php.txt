@@ -1,4 +1,0 @@
-FROM php:7.4-cli
-COPY . /webserver_data
-WORKDIR /webserver_data
-CMD [ "php", "./index.php" ]

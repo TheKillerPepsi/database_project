@@ -41,11 +41,11 @@ services:
     python:
         container_name: python
         build:
-            context: .\dockerfile\python
-            dockerfile: Dockerfile
-        volumes: 
-            - .\python
-        ports: 
-            - "5000:50000"
+            context: .\
+            dockerfile: Dockerfile-py
+      #  volumes: 
+        #    - .\python
+       # ports: 
+        #    - "5000:50000"
     #networks:
      #   frontend
