@@ -40,12 +40,9 @@ services:
             - "8080:8080"
     python:
         container_name: python
-        build:
-            context: .\
+        build: 
+            context: .\python_data\
             dockerfile: Dockerfile-py
-      #  volumes: 
-        #    - .\python
-       # ports: 
-        #    - "5000:50000"
+
     #networks:
      #   frontend
