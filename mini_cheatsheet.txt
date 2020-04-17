@@ -1,7 +1,9 @@
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 docker-compose up -d
-
+docker network inspect database_project_default
+ docker network ls
+docker image rm <ID>
 
 docker exec -it php_web ls -l /var/www/html
 
