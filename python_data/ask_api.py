@@ -3,7 +3,7 @@
 import requests
 import json
 import mysql.connector
-
+import time
 ##### API query ##########
 
 #url = "https://api.exchangeratesapi.io/latest"
@@ -24,8 +24,13 @@ import mysql.connector
  
 
 ####### database work ######
+print("Deeebuuuuuug!!!!!!!!")
 
-
-
-db = mysql.connector.connect (host = "sql", user = "root", passwd = "1234", db = "db.project")
-print(connection)
+time.sleep(10)
+db = mysql.connector.connect (host = "sql", user = "root", passwd = "example", db = "db.project")
+print(db)
+#x = 0
+#while (db == False or x < 5):
+ #   x += 1
+  #  db = mysql.connector.connect (host = "sql", user = "root", passwd = "1234", db = "db.project")
+   # print("Database connection wont work")
