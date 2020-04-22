@@ -35,22 +35,15 @@ services:
             - "3306:3306"
         expose:
             - "3306"
-    admin:
-        container_name: sql_admin
-        image: adminer
-        ports:
-            - "8080:8080"
-        depends_on: 
-            - sql
-    python:
-        container_name: python
-        build: 
-            context: .\python_data\
-            dockerfile: Dockerfile-py
-        links: 
-            - sql
-        depends_on: 
-            - sql
+#    python:
+#        container_name: python
+#        build: 
+#            context: .\python_data\
+#            dockerfile: Dockerfile-py
+#        links: 
+#            - sql
+#        depends_on: 
+#            - sql
 
    # networks:
     #frontend:
