@@ -12,7 +12,7 @@ url = "https://api.exchangeratesapi.io/latest"
 response = requests.get(url)
 data = response.text
 parsed = json.loads(data)
-rates = parsed["rates"]
+rates = parsed["rates"] 
 
 #create table
 #CREATE TABLE `db.project`.`tb_devisen_2` (
