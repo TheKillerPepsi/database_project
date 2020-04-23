@@ -35,15 +35,15 @@ services:
             - "3306:3306"
         expose:
             - "3306"
-#    python:
-#        container_name: python
-#        build: 
-#            context: .\python_data\
-#            dockerfile: Dockerfile-py
-#        links: 
-#            - sql
-#        depends_on: 
-#            - sql
+    python:
+        container_name: python
+        build: 
+            context: .\python_data\
+            dockerfile: Dockerfile-py
+        links: 
+            - sql
+        depends_on: 
+            - sql
 
    # networks:
     #frontend:
