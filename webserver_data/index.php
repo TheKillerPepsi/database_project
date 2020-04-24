@@ -26,33 +26,20 @@ if (mysqli_num_rows($result)>0)
 { 
   //Hier wird gesagt, solange SQL noch einen Array (mit der MEthode fetch_array) aus der Variablen result hat soll er das folgende machen. Ein Arrayteil ist damit eine Zelle einer Zeile
   echo "<h1> Aktuelle Kurse: </h1>";
+
   while($row = mysqli_fetch_array($result))
   {
       //Hier wird, aus der Row/Zeile sich der erste "Array" geschnappt (also Zelle) und dargestellt. Anschließend wird ein Zeilenumbruch gemacht
       echo " ".$row[1]." ".$row[2];
       echo "<br>";
   }
+
+  echo "<br>";
+  echo "<br>";
+
+ 
 }
 
-
-
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-
-echo "<select>";
-echo "<option> Bitte wählen Sie die erste Sprache aus: <option> ";
-while($res = mysqli_fetch_array($result))
-{
-  echo "<option>" . htmlspecialchars($res["Waehrung_1"]) . "</option>";
-
-}
-
-echo "</select>";
-
-
-  
 mysqli_close($conn);
 
   
