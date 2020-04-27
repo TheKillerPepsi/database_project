@@ -13,7 +13,7 @@
                 
                 
         ?>
-        <form id="berechnung">
+        <form action="action.php" id="berechnung" method="post">
         <!--  Dropdown_01 --->
         <h3> Wähle die erste Währung aus: 
         <select name="dropdown_01">
@@ -49,13 +49,14 @@
         
         <label for="input_data"> </label>
         <input type="number" id=data name="data" min="o">
-        <input type="submit" value="Submit! :)">
+        <input type="submit" value="Submit! :)" name="submit">
         <br>
         </h3>
         <br>
+        </form>
         <!---Ergebnis ---->
         
-        </form>
+        
         <!-- komplette Anzeige -->
         <h2> Die aktuellen Kurse: </h2>
         <?php
