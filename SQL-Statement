@@ -1,0 +1,14 @@
+ DELIMETER ||
+               CREATE FUNCTION convert (val float, iso_01 char, iso_02 char)
+               RETURNS float
+               BEGIN
+                   DECLARE 
+                   SELECT kurs FROM `db.project`.tb_devisen WHERE waehrung_iso="RUP" AS iso_01
+                   SELECT kurs FROM `db.project`.tb_devisen WHERE waehrung_iso="JPY" AS iso_02
+                   
+                   
+                   
+               RETURN 1;
+               END
+               ||
+               DELIMETER ;

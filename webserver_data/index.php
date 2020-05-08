@@ -1,6 +1,9 @@
+<!DOCTYPE html>
+<html lang="de">
 <html> 
     <head> 
-        <title>Dropdown</title> 
+        <meta charset="UTF-8">
+        <title>Database_Project</title> 
     </head> 
     <body> 
        <h1> Willkommen auf meiner Website! </h1>
@@ -11,10 +14,10 @@
                 $mysqli = NEW MySQLi('sql', 'root', '1234', 'db.project');        
         ?>
          <form action="" id="berechnung" method="post">
-        
+         <h2> Für die Berechnungen ohne Euro: </h2>
         <!---------------------------  Dropdown_01 ------------------------------------>
-        <h3> Wähle die erste Währung aus: 
-        <select name="dropdown_01">
+        <h3> Wähle die erste Währung aus : 
+        <select name="dropdown_01[]">
         <?php
             $result_dd_01 = $mysqli->query("SELECT * FROM tb_devisen;");
             while($dd_01 = $result_dd_01->fetch_assoc())
@@ -32,6 +35,7 @@
             echo $array_dd_01[1];
             echo $array_dd_01[2];
         ?> 
+        
         <!---------------------------  Dropdown_02 -------------------------------------->
         <h3> Wähle die zweite Währung aus: 
         <select name="dropdown_02">
@@ -79,7 +83,20 @@
                # $Ergebnis = 
 
              
-
+               DELIMETER ||
+               CREATE FUNCTION convert (val float, iso_01 char, iso_02 char)
+               RETURNS float
+               BEGIN
+                   DECLARE 
+                   SELECT kurs FROM `db.project`.tb_devisen WHERE waehrung_iso="RUP" AS iso_01
+                   SELECT kurs FROM `db.project`.tb_devisen WHERE waehrung_iso="JPY" AS iso_02
+                   
+                   
+                   
+               RETURN 1;
+               END
+               ||
+               DELIMETER ;
             }
         ?>
         

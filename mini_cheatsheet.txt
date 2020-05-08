@@ -9,8 +9,3 @@ docker exec -it php_web ls -l /var/www/html
 
 docker exec -it <container_name> <COMMAND>
 
-INSERT INTO tb_devisen
-VALUES
-('EUR', 1),
-('USD', 1,0871),
-('JPY', 118,36);
