@@ -9,3 +9,6 @@ docker exec -it php_web ls -l /var/www/html
 
 docker exec -it <container_name> <COMMAND>
 
+use `db.project`;
+call do_math('USD', 'GBP', 500);
+
