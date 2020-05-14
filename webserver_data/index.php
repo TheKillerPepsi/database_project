@@ -64,40 +64,27 @@
         </form>
         <!---Ergebnis ---->
         <?php
-            if(isset($_POST['submit']))
-            {
+           # if(isset($_POST['submit']))
+           # {
                
                
-                $dd_01_id = $_POST['dropdown_01'];
-                $dd_02_id = $_POST['dropdown_02'];
-                $Wert = $_POST['data'];
+             #   $dd_01_id = $_POST['dropdown_01'];
+            #    $dd_02_id = $_POST['dropdown_02'];
+              #  $Wert = $_POST['data'];
                 #cho gettype($dd_01_id);
-                echo "Der Kurs der ersten Währung lautet: ".$dd_01_id;
-                echo "<br>";
-                echo "Der Kurs der zweiten Währung lautet: ".$dd_02_id;
-                echo "<br>";
-                echo "Der eingegbene Wert beträgt: ".$Wert;
-                $Ergebnis_01 = $Wert / $dd_01_id;
-                $Ergebnis_02 = $Ergebnis_01*$dd_02_id;
-                echo $Ergebnis_02;
+              #  echo "Der Kurs der ersten Währung lautet: ".$dd_01_id;
+              #  echo "<br>";
+              #  echo "Der Kurs der zweiten Währung lautet: ".$dd_02_id;
+              #  echo "<br>";
+              #  echo "Der eingegbene Wert beträgt: ".$Wert;
+              #  $Ergebnis_01 = $Wert / $dd_01_id;
+               # $Ergebnis_02 = $Ergebnis_01*$dd_02_id;
+                #echo $Ergebnis_02;
                # $Ergebnis = 
 
              
-               DELIMETER ||
-               CREATE FUNCTION convert (val float, iso_01 char, iso_02 char)
-               RETURNS float
-               BEGIN
-                   DECLARE 
-                   SELECT kurs FROM `db.project`.tb_devisen WHERE waehrung_iso="RUP" AS iso_01
-                   SELECT kurs FROM `db.project`.tb_devisen WHERE waehrung_iso="JPY" AS iso_02
-                   
-                   
-                   
-               RETURN 1;
-               END
-               ||
-               DELIMETER ;
-            }
+              
+            #}
         ?>
         
 
