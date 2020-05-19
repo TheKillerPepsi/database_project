@@ -11,7 +11,7 @@ data = response.text
 parsed = json.loads(data)
 rates = parsed["rates"]
 
-# wait 10 seconds until the sql socket is up
+# wait 5 seconds until the sql socket is up
 time.sleep(5)
 
 # establish database connection
