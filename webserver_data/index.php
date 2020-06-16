@@ -17,7 +17,6 @@
         <!-----Test Stuff -->
 
         
-        <h2> Test Stuff </h2>
         <?php
             if(isset($_POST['submit']))
             {
@@ -59,7 +58,6 @@
 
 ?>
          <form action="" id="berechnung" method="post">
-         <h2> Für die Berechnungen ohne Euro: </h2>
         <!---------------------------  Dropdown_01 ------------------------------------>
         <h3> Wähle die erste Währung aus : 
         <select name="dropdown_01">
@@ -105,6 +103,18 @@
         <br>
         </form>
         <!---Ergebnis ---->
+        <?php
+        $result_all = $mysqli->query("SELECT * FROM tb_devisen;");
+        //Hier wird gesagt, solange SQL noch einen Array (mit der MEthode fetch_array) aus der Variablen result hat soll er das folgende machen. Ein Arrayteil ist damit eine Zelle einer Zeile
+        echo "<h1> Aktuelle Kurse: </h1>";
+        while($row = mysqli_fetch_array($result_all))
+        {
+            //Hier wird, aus der Row/Zeile sich der erste "Array" geschnappt (also Zelle) und dargestellt. Anschließend wird ein Zeilenumbruch gemacht
+            echo " ".$row[1]." ".$row[2];
+             echo "<br>";
+        }
+        ?>
+}
 
 
 
