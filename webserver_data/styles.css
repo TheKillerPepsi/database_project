@@ -1,0 +1,40 @@
+#wrapper {
+    display: flex;
+    
+    overflow: auto;
+    width: 80%;
+    min-width: 500px;
+    max-width: 1200px;
+    
+}
+#Dropdowns {
+    
+    border: 3px solid #73AD21;
+    text-align: left;
+    margin: 10px;
+    position: relative;
+    left: 30px;
+    width: 80%;
+    min-width: 500px;
+    max-width: 1200px;
+}
+
+#alle_kurse {
+   float: right;
+   border: 3px solid #73AD21;
+   text-align: center;
+   margin: 10px;
+   position: relative;
+   left: 30px;
+}
+
+#submit {
+    float: right;
+   border: 3px solid #73AD21;
+   text-align: center;
+   margin: 10px;
+   position: relative;
+   left: 30px;
+
+}
+
