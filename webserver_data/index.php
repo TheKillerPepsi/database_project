@@ -16,8 +16,23 @@
         <?php
                 $mysqli = NEW MySQLi('sql', 'root', '1234', 'db.project');        
         ?>
+        <!---Alle Kurse ---->
+        <div id="alle_kurse">
+        <?php
+        $result_all = $mysqli->query("SELECT * FROM tb_devisen;");
+        //Hier wird gesagt, solange SQL noch einen Array (mit der MEthode fetch_array) aus der Variablen result hat soll er das folgende machen. Ein Arrayteil ist damit eine Zelle einer Zeile
+        echo "<h1> Aktuelle Kurse: </h1>";
+        while($row = mysqli_fetch_array($result_all))
+        {
+            //Hier wird, aus der Row/Zeile sich der erste "Array" geschnappt (also Zelle) und dargestellt. Anschließend wird ein Zeilenumbruch gemacht
+            echo " ".$row[1].":   ".$row[2];
+             echo "<br>";
+        }
+        ?>
+        </div>
 
-        <!-----Test Stuff -->
+
+
 
 
 
@@ -73,58 +88,45 @@
 
 
         </div>
-        <!---Ergebnis ---->
-        <div id="alle_kurse">
-        <?php
-        $result_all = $mysqli->query("SELECT * FROM tb_devisen;");
-        //Hier wird gesagt, solange SQL noch einen Array (mit der MEthode fetch_array) aus der Variablen result hat soll er das folgende machen. Ein Arrayteil ist damit eine Zelle einer Zeile
-        echo "<h1> Aktuelle Kurse: </h1>";
-        while($row = mysqli_fetch_array($result_all))
-        {
-            //Hier wird, aus der Row/Zeile sich der erste "Array" geschnappt (also Zelle) und dargestellt. Anschließend wird ein Zeilenumbruch gemacht
-            echo " ".$row[1].":   ".$row[2];
-             echo "<br>";
-        }
-        ?>
-        </div>
         <div id="submit">
         
-                <?php
-            if(isset($_POST['submit']))
-            {
-            
-               
-                $dd_01_id = $_POST['dropdown_01'];
-                $dd_02_id = $_POST['dropdown_02'];
-                $Wert = $_POST['data'];
-             
-                echo "Der Kurs der ersten Währung lautet: ".$dd_01_id;
-                echo "<br>";
-                echo "Der Kurs der zweiten Währung lautet: ".$dd_02_id;
-                echo "<br>";
-                echo "Der eingegbene Wert beträgt: ".$Wert;
-                echo "<br>";
+        <?php
+    if(isset($_POST['submit']))
+    {
+    
+       
+        $dd_01_id = $_POST['dropdown_01'];
+        $dd_02_id = $_POST['dropdown_02'];
+        $Wert = $_POST['data'];
+     
+        echo "Der Kurs der ersten Währung lautet: ".$dd_01_id;
+        echo "<br>";
+        echo "Der Kurs der zweiten Währung lautet: ".$dd_02_id;
+        echo "<br>";
+        echo "Der eingegbene Wert beträgt: ".$Wert;
+        echo "<br>";
 
-                $test_var_01 = "USD";
-                $test_var_02 = "CAD";
-                $test_var_03 = 5;
-                #$input = "Call do_math('".$test_var_01."', '".$test_var_02."', ".$test_var_03.")";
-                $input = "Call do_math('".$dd_01_id."', '".$dd_02_id."', ".$Wert.")";
-                #executes stored procedure
-                $result_test = mysqli_query($mysqli,$input) or die ("Query fail: ".$mysqli_error());
-             
-                #loop through output and echo
-                while ($test_row = mysqli_fetch_array($result_test))
-                {
-                echo "Das Ergebnis lautet: ".$test_row[0];
-                }    
-            }
+        $test_var_01 = "USD";
+        $test_var_02 = "CAD";
+        $test_var_03 = 5;
+        #$input = "Call do_math('".$test_var_01."', '".$test_var_02."', ".$test_var_03.")";
+        $input = "Call do_math('".$dd_01_id."', '".$dd_02_id."', ".$Wert.")";
+        #executes stored procedure
+        $result_test = mysqli_query($mysqli,$input) or die ("Query fail: ".$mysqli_error());
+     
+        #loop through output and echo
+        while ($test_row = mysqli_fetch_array($result_test))
+        {
+        echo "Das Ergebnis lautet: ".$test_row[0];
+        }    
+    }
 
-          
-        ?>
+  
+?>
 
-        </div>
-
+</div>
+        
+        
 
 
             </div>

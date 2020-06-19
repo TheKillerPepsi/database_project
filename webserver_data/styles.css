@@ -1,40 +1,38 @@
 #wrapper {
-    display: flex;
-    
+   display: flex; 
     overflow: auto;
-    width: 80%;
-    min-width: 500px;
-    max-width: 1200px;
+    float: left;
+    background-color: ghostwhite;
+  
     
 }
-#Dropdowns {
+#Dropdowns {  
+    border: 300px solid blue;
+    text-align: center;
+    width: 50%;
+    margin-left: 50% ;
+    margin-right: 50% ;
     
-    border: 3px solid #73AD21;
-    text-align: left;
-    margin: 10px;
-    position: relative;
-    left: 30px;
-    width: 80%;
-    min-width: 500px;
-    max-width: 1200px;
 }
 
 #alle_kurse {
-   float: right;
    border: 3px solid #73AD21;
    text-align: center;
-   margin: 10px;
+  /*  margin: 10px;
    position: relative;
-   left: 30px;
+   left: 30px; */
+   width: 25% ;
+   background-color: lightcyan;
 }
 
 #submit {
-    float: right;
-   border: 3px solid #73AD21;
-   text-align: center;
-   margin: 10px;
-   position: relative;
-   left: 30px;
+  /*  float: right; */
+    border: 3px solid #73AD21;
+    margin: 10px;
+    
+    left: 30px;
+    width: 25% ;
+    
 
 }
 
